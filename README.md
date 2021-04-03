@@ -1,5 +1,5 @@
 # perfect-python-4-windows
-=Setting up Windows 10 development environment for python development (Chocolatey, MiniConda, PyCharm, Windows Terminal, cloud storage)=
+=Setting up Windows 10 development environment for python development (Chocolatey, MiniConda, PyCharm, Windows Terminal, cloud storage)
 
 This is short (and hopefully sweet :-) ) set of instructions for creating fast, efficient and highly operational enviroment for python development.
 
