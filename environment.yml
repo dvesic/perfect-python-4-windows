@@ -1,0 +1,7 @@
+name: python4win
+channels:
+  - https://conda.anaconda.org/conda-forge/
+  - defaults
+dependencies:
+  - python=3.9
+prefix: C:\Users\dvesic\Miniconda3-32\envs\python4win
