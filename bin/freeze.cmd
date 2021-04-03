@@ -3,7 +3,7 @@ IF NOT DEFINED CONDA_DEFAULT_ENV    GOTO :NOT_ACTIVATED
 IF %CONDA_DEFAULT_ENV%==base        GOTO :NOT_ACTIVATED
 
 pip freeze > requirements.txt
-CALL conda env export > environment.yml
+CALL conda env export --from-history > environment.yml
 GOTO :END
 
 :NOT_ACTIVATED
