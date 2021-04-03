@@ -9,11 +9,15 @@ That is basic reason for creating this set of instructions and scripts - to enab
 
 Some assumptions:
 * Operating system is Windows 10, fully patched. Additional software:
-  * Windows Terminal
+  * [Windows Terminal](https://www.microsoft.com/en-rs/p/windows-terminal/9n0dx20hk701?rtc=1#activetab=pivot:overviewtab)
   * OpenSSL
   * WSL 2
 * Necessary software for installation will be:
   * Chocolately
   * MiniConda
   * PyCharm 
-* all files will be on some cloud storage and ideally, letter assigned will be same on all machines
+* all files will be on some cloud storage and ideally, drive letter assigned will be same on all machines
+
+### Windows 10
+
+Windows 10 became extremely versatile and configurable development environment. Windows Terminal, Windows SubSystem for Linux, Visual Studio Code are just some of the biggest improvements in last couple of years.
