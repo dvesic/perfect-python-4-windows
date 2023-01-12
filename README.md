@@ -30,17 +30,26 @@ As well as anything else, you need to keep your MiniConda installation up-to-dat
 conda update -n base -c defaults conda
 ```
 ### Creating new python environment
-In order to create environment, you need _env_name_ and python _version_; apart from that, note _target_directory_ where your files will reside:
+In order to create environment, you need _env_name_ and python _version_:
 
 Create Conda environment:
 `conda create --name env_name python=3.10`
 
-In order to automaticaly switch to _target_directory_ on environment activation:
-1. Download script `etc/conda/activate.d/set_working_directory.bat`
-2. Edit it, to point to right drive and _target_directory_
-3. Store it at `%CONDA_PREFIX%\envs\env_name`, preserving directory structure (should be: `%CONDA_PREFIX%\envs\env_name\etc\conda\activate.d\set_working_directory.bat`)
-
 ### Activating/deactivating python environment
+
+Each project should have its own _target_directory_; once that done, it is very convenient to automaticaly switch to appropriate drive/folder on environment activation.
+
+To do so, **first time** when you intend to activate environment:
+1. Open MiniConda environment 
+2. Create project _target_directory_ and switch to it
+3. Activate conda environment with `conda activate name_of_env`
+4. Download there file [auto_cd_folder.cmd](https://github.com/dvesic/perfect-python-4-windows/blob/main/bin/auto_cd_folder.cmd)
+5. Execute it once; this will create appropriate _set_working_directory.bat_ in conda _envs\name_of_env\etc\conda\activate.d_ folder
+6. (you can safely delete file once executed)
+
+Going forward, each subsequent activation of environment will also move you to appropriate folder as well.
+
+For reference, activation and deactivation of environment is simple:
 ```
 conda activate name_of_env
 conda deactivate

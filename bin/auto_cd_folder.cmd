@@ -1,4 +1,8 @@
 @ECHO OFF
+
+REM Batch creation for auto-cd drive and folder on CONDA Activate
+REM https://github.com/dvesic/perfect-python-4-windows
+
 IF NOT DEFINED CONDA_DEFAULT_ENV    GOTO :NOT_ACTIVATED
 IF %CONDA_DEFAULT_ENV%==base        GOTO :NOT_ACTIVATED
 
