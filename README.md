@@ -54,3 +54,14 @@ For reference, activation and deactivation of environment is simple:
 conda activate name_of_env
 conda deactivate
 ```
+## PyCharm
+
+While Visual Studio Code is great, I still prefer [JetBrains PyCharm](https://www.jetbrains.com/pycharm/) as main python DEV IDE - you can do all things needed for small to large python project.
+
+You can choose between free, Community edition and paid Professional edition. 
+
+Installations:
+* Professional edition: `winget install -e --id JetBrains.PyCharm.Professional`
+* Community edition: `winget install -e --id JetBrains.PyCharm.Community`
+
+I strongly suggest creating JetBrains account and using it for syncing multiple PyCharm instances
