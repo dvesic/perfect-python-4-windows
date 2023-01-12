@@ -21,6 +21,20 @@ Some assumptions:
   * PyCharm 
 * all files will be on some cloud storage and ideally, drive letter assigned will be same on all machines
 
-### Windows 10
+## MiniConda
+There are many ways to separate various python applications and/or environments. IMHO, MiniConda is most versatile and provide significant advantage over others: you can work with multiple python versions on same machine w/o conflict.
 
-Windows 10 became extremely versatile and configurable development environment. Windows Terminal, Windows SubSystem for Linux, Visual Studio Code are just some of the biggest improvements in last couple of years.
+### Keeping things up to date
+As well as anything else, you need to keep your MiniConda installation up-to-date. That is fairly easy: open Conda prompt (over Windows Terminal) and:
+```
+conda update -n base -c defaults conda
+```
+### Creating new python environment
+In order to create environment, you need _name_ and python _version_:
+`conda create --name mobi_banka python=3.10`
+
+### Activating/deactivating python environment
+```
+conda activate name_of_env
+conda deactivate
+```
