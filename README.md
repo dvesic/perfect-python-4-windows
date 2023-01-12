@@ -30,8 +30,15 @@ As well as anything else, you need to keep your MiniConda installation up-to-dat
 conda update -n base -c defaults conda
 ```
 ### Creating new python environment
-In order to create environment, you need _name_ and python _version_:
-`conda create --name mobi_banka python=3.10`
+In order to create environment, you need _env_name_ and python _version_; apart from that, note _target_directory_ where your files will reside:
+
+Create Conda environment:
+`conda create --name env_name python=3.10`
+
+In order to automaticaly switch to _target_directory_ on environment activation:
+1. Download script `etc/conda/activate.d/set_working_directory.bat`
+2. Edit it, to point to right drive and _target_directory_
+3. Store it at `%CONDA_PREFIX%\envs\env_name`, preserving directory structure (should be: `%CONDA_PREFIX%\envs\env_name\etc\conda\activate.d\set_working_directory.bat`)
 
 ### Activating/deactivating python environment
 ```
