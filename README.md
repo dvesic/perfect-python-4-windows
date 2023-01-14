@@ -16,7 +16,7 @@ Some assumptions:
   * (optional) [JetBrains Account](https://account.jetbrains.com/) (PyCharm settings sync)
 * Additional software from MS Store (= one time install, tied to MS Account, easy to install on other machine, auto-update):
   * [Windows Terminal](https://www.microsoft.com/store/productId/9N0DX20HK701)
-  * [App Installer (WinGet)](https://www.microsoft.com/store/productId/9NBLGGH4NNS1)
+  * [App Installer (WinGet)](https://www.microsoft.com/store/productId/9NBLGGH4NNS1) - great CLI (command line) application for managing applications
   * (optional) [DBeaver CE](https://www.microsoft.com/store/productId/9PNKDR50694P) - efficient multi-database management/development tool
   * (optional) [Visual Studio Code](https://apps.microsoft.com/store/detail/XP9KHM4BK9FZ7Q) - while PyCharm is for full python development, VS Code is great all-round multi-purpose editor
   * (optional) [PowerToys](https://apps.microsoft.com/store/detail/XP89DCGQ3K6VLD) - excellent FancyZones are great help with wide monitors and better usage of display space
@@ -28,7 +28,10 @@ Some assumptions:
   * [WinMerge](https://winmerge.org/) (installation: `winget install -e --id WinMerge.WinMerge`)
   * [Lightshot](https://app.prntscr.com/en/) (installation: `winget install -e --id Skillbrains.Lightshot`)
 
-(all of above winget installations are in [this file](./winget-installs.cmd))
+(all of above winget installations are in [this file](./winget-installs.cmd). If you want to copy exact state of winget installed applications from one machine to another, suggest to use:
+From machine: `winget export -o .\winget-export.json`
+(inspect json file, make changes)
+To new machine: `winget import -i .\winget-export.json --accept-package-agreements`
 
 Finally, working with python is tightly coupled with CMD/Windows terminal prompt; one great resource for that is [FiraCode](https://github.com/tonsky/FiraCode) font, monospaced font for development.
 

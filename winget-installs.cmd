@@ -12,11 +12,11 @@ PAUSE > NUL
 
 REM Mandatory software
 
-winget install -e --id Anaconda.Miniconda3
+winget install -e --id Anaconda.Miniconda3      --accept-package-agreements
 
 REM Recommended software
 
-winget install -e --id 7zip.7zip
-winget install -e --id GnuWin32.Wget
-winget install -e --id WinMerge.WinMerge
-winget install -e --id Skillbrains.Lightshot
+winget install -e --id 7zip.7zip                --accept-package-agreements
+winget install -e --id GnuWin32.Wget            --accept-package-agreements
+winget install -e --id WinMerge.WinMerge        --accept-package-agreements
+winget install -e --id Skillbrains.Lightshot    --accept-package-agreements
