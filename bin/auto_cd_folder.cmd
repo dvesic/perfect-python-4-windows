@@ -22,7 +22,7 @@ GOTO :END
 
 :NOT_ACTIVATED
 ECHO.
-ECHO Please Activate Environment BEFORE running %~n0
+ECHO Please activate CONDA environment BEFORE running %~n0
 ECHO.
 
 GOTO :END
