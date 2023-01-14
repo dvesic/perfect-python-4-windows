@@ -9,45 +9,59 @@ That is basic reason for creating this set of instructions and scripts - to enab
 
 Some assumptions:
 * Operating system is Windows 10/11, fully patched. 
-* Additional software from MS Store (= easy to install on other machine, auto-update):
+* Online accounts needed:
+  * [Github](https://github.com/) (projects, settings sync)
+  * (optional) [MS Account](https://account.microsoft.com/account/manage-my-account) (MS Store applications, settings sync)
+  * (optional) [JetBrains Account](https://account.jetbrains.com/) (PyCharm settings sync)
+* Additional software from MS Store (= one time install, tied to MS Account, easy to install on other machine, auto-update):
   * [Windows Terminal](https://www.microsoft.com/store/productId/9N0DX20HK701)
   * [App Installer (WinGet)](https://www.microsoft.com/store/productId/9NBLGGH4NNS1)
-* Optional, but highly useful software:
-  * [DBeaver CE](https://www.microsoft.com/store/productId/9PNKDR50694P) - efficient multi-database management/development tool
-  * [Visual Studio Code](https://apps.microsoft.com/store/detail/XP9KHM4BK9FZ7Q) - while PyCharm is for full python development, VS Code is great all-round multi-purpose editor
-* Necessary software for installation will be:
-  * Chocolately
-  * MiniConda
-  * PyCharm 
-* all files will be on some cloud storage and ideally, drive letter assigned will be same on all machines
+  * (optional) [DBeaver CE](https://www.microsoft.com/store/productId/9PNKDR50694P) - efficient multi-database management/development tool
+  * (optional) [Visual Studio Code](https://apps.microsoft.com/store/detail/XP9KHM4BK9FZ7Q) - while PyCharm is for full python development, VS Code is great all-round multi-purpose editor
+  * (optional) [PowerToys](https://apps.microsoft.com/store/detail/XP89DCGQ3K6VLD) - excellent FancyZones are great help with wide monitors and better usage of display space
+* Rest of mandatory software:
+  * [MiniConda](installation: `winget install -e --id Anaconda.Miniconda3`)
+* Rest of highly recommended software:
+  * [7zip](https://www.7-zip.org/) (installation: `winget install -e --id 7zip.7zip`)
+  * [WGet](https://eternallybored.org/misc/wget/) (installation: `winget install -e --id GnuWin32.Wget`)
+  * [WinMerge](https://winmerge.org/) (installation: `winget install -e --id WinMerge.WinMerge`)
+  * [Lightshot](https://app.prntscr.com/en/) (installation: `winget install -e --id Skillbrains.Lightshot`)
+
+(all of above winget installations are in [this file](./winget-installs.cmd))
+
+Finally, working with python is tightly coupled with CMD/Windows terminal prompt; one great resource for that is [FiraCode](https://github.com/tonsky/FiraCode) font, monospaced font for development.
+
+Install it last, after all other software and then [enable ligatures](https://github.com/tonsky/FiraCode/wiki#enabling-ligatures) for Windows Terminal, VS Code and PyCharm.
 
 ## MiniConda
 There are many ways to separate various python applications and/or environments. IMHO, MiniConda is most versatile and provide significant advantage over others: you can work with multiple python versions on same machine w/o conflict.
 
-### Keeping things up to date
-As well as anything else, you need to keep your MiniConda installation up-to-date. That is fairly easy: open Conda prompt (over Windows Terminal) and:
-```
-conda update -n base -c defaults conda
-```
 ### Creating new python environment
 In order to create environment, you need _env_name_ and python _version_:
+
+#### Blank one
 
 Create Conda environment:
 `conda create --name env_name python=3.10`
 
+#### Existing one (GitHub)
+Above instruction is for completely new environment; for existing projects on Github:
+* move to parent folder
+* clone project from GitHub (example: `git clone https://github.com/dvesic/perfect-python-4-windows`)
+* execute `bin\create.cmd` - that will recreate previosly frozen Conda environment
+* activate environment
+* execute `bin\auto_cd_folder.cmd`
+  * this will create appropriate _set_working_directory.bat_ in conda _envs\name_of_env\etc\conda\activate.d_ folder
+  * going forward, each subsequent activation of environment will also move you to appropriate folder as well
+
+Now you have new Conda environment, and project downloaded. Open project in PyCharm, and set python interperter to newly created Conda environment:
+* File/Settings (Ctrl-Alt-S)
+* Project/Python Interpreter:
+![Adding newly created Conda environment to PyCharm project](assets/pycharm-adding-new-conda-interpereter.jpg)
+
 ### Activating/deactivating python environment
 
 Each project should have its own _target_directory_; once that done, it is very convenient to automaticaly switch to appropriate drive/folder on environment activation.
-
-To do so, **first time** when you intend to activate environment:
-1. Open MiniConda environment 
-2. Create project _target_directory_ and switch to it
-3. Activate conda environment with `conda activate name_of_env`
-4. Download there file [auto_cd_folder.cmd](https://github.com/dvesic/perfect-python-4-windows/blob/main/bin/auto_cd_folder.cmd)
-5. Execute it once; this will create appropriate _set_working_directory.bat_ in conda _envs\name_of_env\etc\conda\activate.d_ folder
-6. (you can safely delete file once executed)
-
-Going forward, each subsequent activation of environment will also move you to appropriate folder as well.
 
 For reference, activation and deactivation of environment is simple:
 ```
@@ -60,8 +74,17 @@ While Visual Studio Code is great, I still prefer [JetBrains PyCharm](https://ww
 
 You can choose between free, Community edition and paid Professional edition. 
 
-Installations:
+Installations (in **Elevated admin console**):
 * Professional edition: `winget install -e --id JetBrains.PyCharm.Professional`
 * Community edition: `winget install -e --id JetBrains.PyCharm.Community`
 
-I strongly suggest creating JetBrains account and using it for syncing multiple PyCharm instances
+I strongly suggest creating JetBrains account and using it for syncing multiple PyCharm instances.
+
+## Keeping things up to date
+
+Last, but not least - please keep your full environment up to date :-)
+
+* Windows - at least monthly, make sure that all updates are installed and applied
+* MS Store - at least monthly, update all applications, if those are not updated already
+* MiniConda: open Conda prompt (over Windows Terminal) and: `conda update -n base -c defaults conda`
+* WinGet applications: open (**Elevated admin console**) console and: `winget upgrade --all`
