@@ -1,4 +1,6 @@
+
 # Perfect python for windows - fluent, movable and efficient installation
+
 ## Setting up Windows 10/11 development environment for python development (winget, MiniConda, PyCharm, Windows Terminal, cloud storage)
 
 This is short (and hopefully sweet :smile:) set of instructions for creating fast, efficient and highly operational enviroment for python development.
@@ -8,8 +10,9 @@ Given nature of today's development, it is expected that you develop same projec
 That is basic reason for creating this set of instructions and scripts - to enable today's nomad developers to do real creative work w/o worrying too much about on which machine you are and which state you left project on previous work place.
 
 Some assumptions:
+
 * Operating system is Windows 10/11, fully patched.
-  * Yes, I am perfectly aware that you can create brilliant working environments on Linux/Mac. However, I am perfectly happy with Windows and won't go into other operating systems here :upside_down_face:
+  * Yes, I am aware that you can create brilliant working environments on Linux/Mac. However, I am perfectly happy with Windows and won't go into other operating systems here :upside_down_face:
 * Online accounts needed:
   * [Github](https://github.com/) (projects, settings sync)
   * (optional) [MS Account](https://account.microsoft.com/account/manage-my-account) (MS Store applications, settings sync)
@@ -31,6 +34,7 @@ Some assumptions:
 (all of above winget installations are in [winget-installs.cmd](./winget-installs.cmd))
 
 If you want to more general approach, to copy exact state of winget installed applications from one machine to another, suggest to use:
+
 * From old machine: `winget export -o .\winget-export.json`
 * (inspect json file, make changes if needed)
 * To new machine: `winget import -i .\winget-export.json --accept-package-agreements`
@@ -40,13 +44,14 @@ Finally, working with python is tightly coupled with CMD/Windows terminal prompt
 Install it last, after all other software and then [enable ligatures](https://github.com/tonsky/FiraCode/wiki#enabling-ligatures) for Windows Terminal, VS Code and PyCharm.
 
 ## MiniConda
+
 There are many ways to separate various python applications and/or environments. IMHO, [MiniConda](https://docs.conda.io/en/latest/miniconda.html) is most versatile and provide significant advantage over others: you can work with multiple python versions on same machine w/o conflict.
 
 All below assumes that you *opened MiniConda CMD or PowerShell prompt* and working from there.
 
 ### Utility scripts
 
-While technically scripts in /bin folder are not part of MiniConda, those scripts are quite usefull in daily work.
+While technically scripts in *bin* folder are not part of MiniConda, those scripts are quite usefull in daily work.
 
 Here is quick explanation of each:
 
@@ -67,7 +72,8 @@ Once you create new MiniConda environment and **activate** it, execute this scri
 In practical terms, going forward, each subsequent activation of environment will also move you to appropriate folder as well
 
 ### Creating new python environment
-In order to create environment, you need _env_name_ and python _version_:
+
+In order to create environment, you need *env_name* and python *version*:
 
 #### Blank one
 
@@ -75,7 +81,9 @@ Create Conda environment:
 `conda create --name env_name python=3.10`
 
 #### Existing one (GitHub)
+
 Above instruction is for completely new environment; for existing projects on Github:
+
 * move to parent folder
 * clone project from GitHub (example: `git clone https://github.com/dvesic/perfect-python-4-windows`)
 * move to newly created folder
@@ -84,19 +92,26 @@ Above instruction is for completely new environment; for existing projects on Gi
 * execute `bin\auto_cd_folder.cmd`
 
 Now you have new Conda environment, and project downloaded. Open project in PyCharm, and set python interperter to newly created Conda environment:
+
 * File/Settings (Ctrl-Alt-S)
 * Project/Python Interpreter:
 ![Adding newly created Conda environment to PyCharm project](assets/pycharm-adding-new-conda-interpereter.jpg)
 
 ### Activating/deactivating python environment
 
-Each project should have its own _target_directory_; once that done, it is very convenient to automaticaly switch to appropriate drive/folder on environment activation.
-
 For reference, activation and deactivation of environment is simple:
-```
+
+```bat
 conda activate name_of_env
 conda deactivate
 ```
+
+## Visual Studio Code
+
+Great [multi-purpose editor and IDE](https://code.visualstudio.com/) for various programming languages.
+
+Once installed, I suggest to use your github or Microsoft Account and to activate settings sync.
+
 ## PyCharm
 
 While Visual Studio Code is great, I still prefer [JetBrains PyCharm](https://www.jetbrains.com/pycharm/) as main python DEV IDE - you can do all things needed for small to large python project.
@@ -104,6 +119,7 @@ While Visual Studio Code is great, I still prefer [JetBrains PyCharm](https://ww
 You can choose between free, Community edition and paid Professional edition. 
 
 Installations (in **Elevated admin console**):
+
 * Professional edition: `winget install -e --id JetBrains.PyCharm.Professional`
 * Community edition: `winget install -e --id JetBrains.PyCharm.Community`
 
