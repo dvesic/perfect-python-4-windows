@@ -88,6 +88,7 @@ Above instruction is for completely new environment; for existing projects on Gi
 
 * move to parent folder
 * clone project from GitHub (example: `git clone https://github.com/dvesic/perfect-python-4-windows`)
+  * assumption is that you have *bin* folder from this project; otherwise, download it after clonning
 * move to newly created folder
 * execute `bin\create.cmd` - that will recreate previosly frozen Conda environment
 * activate environment (`conda activate name_of_env`)
