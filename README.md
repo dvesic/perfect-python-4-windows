@@ -9,7 +9,7 @@ That is basic reason for creating this set of instructions and scripts - to enab
 
 Some assumptions:
 * Operating system is Windows 10/11, fully patched.
-  * Yes, I am perfectly aware that you can create brilliant working environments on Linux/Mac. However, I am perfectly happy with Windows and won't go into other operating systems here.
+  * Yes, I am perfectly aware that you can create brilliant working environments on Linux/Mac. However, I am perfectly happy with Windows and won't go into other operating systems here :upside_down_face:
 * Online accounts needed:
   * [Github](https://github.com/) (projects, settings sync)
   * (optional) [MS Account](https://account.microsoft.com/account/manage-my-account) (MS Store applications, settings sync)
@@ -21,24 +21,26 @@ Some assumptions:
   * (optional) [Visual Studio Code](https://apps.microsoft.com/store/detail/XP9KHM4BK9FZ7Q) - while PyCharm is for full python development, VS Code is great all-round multi-purpose editor
   * (optional) [PowerToys](https://apps.microsoft.com/store/detail/XP89DCGQ3K6VLD) - excellent FancyZones are great help with wide monitors and better usage of display space
 * Rest of mandatory software:
-  * [MiniConda](installation: `winget install -e --id Anaconda.Miniconda3`)
+  * [MiniConda](https://docs.conda.io/en/latest/miniconda.html) (installation: `winget install -e --id Anaconda.Miniconda3`)
 * Rest of highly recommended software:
   * [7zip](https://www.7-zip.org/) (installation: `winget install -e --id 7zip.7zip`)
   * [WGet](https://eternallybored.org/misc/wget/) (installation: `winget install -e --id GnuWin32.Wget`)
   * [WinMerge](https://winmerge.org/) (installation: `winget install -e --id WinMerge.WinMerge`)
   * [Lightshot](https://app.prntscr.com/en/) (installation: `winget install -e --id Skillbrains.Lightshot`)
 
-(all of above winget installations are in [this file](./winget-installs.cmd). If you want to copy exact state of winget installed applications from one machine to another, suggest to use:
-From machine: `winget export -o .\winget-export.json`
-(inspect json file, make changes)
-To new machine: `winget import -i .\winget-export.json --accept-package-agreements`
+(all of above winget installations are in [this file](./winget-installs.cmd))
+
+If you want to more general approach, to copy exact state of winget installed applications from one machine to another, suggest to use:
+* From old machine: `winget export -o .\winget-export.json`
+* (inspect json file, make changes if needed)
+* To new machine: `winget import -i .\winget-export.json --accept-package-agreements`
 
 Finally, working with python is tightly coupled with CMD/Windows terminal prompt; one great resource for that is [FiraCode](https://github.com/tonsky/FiraCode) font, monospaced font for development.
 
 Install it last, after all other software and then [enable ligatures](https://github.com/tonsky/FiraCode/wiki#enabling-ligatures) for Windows Terminal, VS Code and PyCharm.
 
 ## MiniConda
-There are many ways to separate various python applications and/or environments. IMHO, MiniConda is most versatile and provide significant advantage over others: you can work with multiple python versions on same machine w/o conflict.
+There are many ways to separate various python applications and/or environments. IMHO, [MiniConda](https://docs.conda.io/en/latest/miniconda.html) is most versatile and provide significant advantage over others: you can work with multiple python versions on same machine w/o conflict.
 
 ### Creating new python environment
 In order to create environment, you need _env_name_ and python _version_:
@@ -82,7 +84,7 @@ Installations (in **Elevated admin console**):
 * Professional edition: `winget install -e --id JetBrains.PyCharm.Professional`
 * Community edition: `winget install -e --id JetBrains.PyCharm.Community`
 
-I strongly suggest creating JetBrains account and using it for syncing multiple PyCharm instances.
+I strongly suggest creating JetBrains account and using it for syncing configuration between multiple PyCharm instances (Settings / Settings Sync)
 
 ## Keeping things up to date
 
