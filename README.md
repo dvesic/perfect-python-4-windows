@@ -44,6 +44,28 @@ There are many ways to separate various python applications and/or environments.
 
 All below assumes that you *opened MiniConda CMD or PowerShell prompt* and working from there.
 
+### Utility scripts
+
+While technically scripts in /bin folder are not part of MiniConda, those scripts are quite usefull in daily work.
+
+Here is quick explanation of each:
+
+#### bin\freeze.cmd
+
+For existing MiniCoda environment, **activated**, you can use `bin\freeze.cmd` to freeze current environment, both MiniConda (it will store info into *environment.yml*) and python/pip (it will store info into *requirements.txt*).
+
+That stored information can be used to recreate environment on other machine.
+
+#### bin\create.cmd
+
+Reverse from freeze - `bin\create.cmd` - in MiniConda **non-activated** prompt will both recreate MiniConda environment with all python packages installed.
+
+#### bin\auto_cd_folder.cmd
+
+Once you create new MiniConda environment and **activate** it, execute this script. This will create appropriate *set_working_directory.bat* in conda *envs\name_of_env\etc\conda\activate.d* folder.
+
+In practical terms, going forward, each subsequent activation of environment will also move you to appropriate folder as well
+
 ### Creating new python environment
 In order to create environment, you need _env_name_ and python _version_:
 
@@ -60,8 +82,6 @@ Above instruction is for completely new environment; for existing projects on Gi
 * execute `bin\create.cmd` - that will recreate previosly frozen Conda environment
 * activate environment (`conda activate name_of_env`)
 * execute `bin\auto_cd_folder.cmd`
-  * this will create appropriate _set_working_directory.bat_ in conda _envs\name_of_env\etc\conda\activate.d_ folder
-  * going forward, each subsequent activation of environment will also move you to appropriate folder as well
 
 Now you have new Conda environment, and project downloaded. Open project in PyCharm, and set python interperter to newly created Conda environment:
 * File/Settings (Ctrl-Alt-S)
