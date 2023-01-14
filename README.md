@@ -8,7 +8,8 @@ Given nature of today's development, it is expected that you develop same projec
 That is basic reason for creating this set of instructions and scripts - to enable today's nomad developers to do real creative work w/o worrying too much about on which machine you are and which state you left project on previous work place.
 
 Some assumptions:
-* Operating system is Windows 10/11, fully patched. 
+* Operating system is Windows 10/11, fully patched.
+  * Yes, I am perfectly aware that you can create brilliant working environments on Linux/Mac. However, I am perfectly happy with Windows and won't go into other operating systems here.
 * Online accounts needed:
   * [Github](https://github.com/) (projects, settings sync)
   * (optional) [MS Account](https://account.microsoft.com/account/manage-my-account) (MS Store applications, settings sync)
