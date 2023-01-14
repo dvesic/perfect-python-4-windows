@@ -28,7 +28,7 @@ Some assumptions:
   * [WinMerge](https://winmerge.org/) (installation: `winget install -e --id WinMerge.WinMerge`)
   * [Lightshot](https://app.prntscr.com/en/) (installation: `winget install -e --id Skillbrains.Lightshot`)
 
-(all of above winget installations are in [this file](./winget-installs.cmd))
+(all of above winget installations are in [winget-installs.cmd](./winget-installs.cmd))
 
 If you want to more general approach, to copy exact state of winget installed applications from one machine to another, suggest to use:
 * From old machine: `winget export -o .\winget-export.json`
