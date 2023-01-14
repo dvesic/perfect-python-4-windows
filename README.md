@@ -30,6 +30,8 @@ Some assumptions:
   * [WGet](https://eternallybored.org/misc/wget/) (installation: `winget install -e --id GnuWin32.Wget`)
   * [WinMerge](https://winmerge.org/) (installation: `winget install -e --id WinMerge.WinMerge`)
   * [Lightshot](https://app.prntscr.com/en/) (installation: `winget install -e --id Skillbrains.Lightshot`)
+  * [Git Cli](https://git-scm.com/download/win) (installation: `winget install -e --id Git.Git`) or as alternative - [Git for Windows](https://gitforwindows.org)
+  * [GitHub Cli](https://cli.github.com/) (installation: `winget install -e --id GitHub.cli`)
 
 (all of above winget installations are in [winget-installs.cmd](./winget-installs.cmd))
 
@@ -108,7 +110,7 @@ conda deactivate
 
 ## Visual Studio Code
 
-Great [multi-purpose editor and IDE](https://code.visualstudio.com/) for various programming languages.
+Great [multi-purpose editor and IDE](https://code.visualstudio.com/) for various programming languages and vast number of extensions.
 
 Once installed, I suggest to use your github or Microsoft Account and to activate settings sync.
 

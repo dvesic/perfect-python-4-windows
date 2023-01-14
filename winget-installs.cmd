@@ -20,3 +20,5 @@ winget install -e --id 7zip.7zip                --accept-package-agreements
 winget install -e --id GnuWin32.Wget            --accept-package-agreements
 winget install -e --id WinMerge.WinMerge        --accept-package-agreements
 winget install -e --id Skillbrains.Lightshot    --accept-package-agreements
+winget install -e --id Git.Git                  --accept-package-agreements
+winget install -e --id GitHub.cli               --accept-package-agreements
