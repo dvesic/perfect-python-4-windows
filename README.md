@@ -42,6 +42,8 @@ Install it last, after all other software and then [enable ligatures](https://gi
 ## MiniConda
 There are many ways to separate various python applications and/or environments. IMHO, [MiniConda](https://docs.conda.io/en/latest/miniconda.html) is most versatile and provide significant advantage over others: you can work with multiple python versions on same machine w/o conflict.
 
+All below assumes that you *opened MiniConda CMD or PowerShell prompt* and working from there.
+
 ### Creating new python environment
 In order to create environment, you need _env_name_ and python _version_:
 
@@ -54,8 +56,9 @@ Create Conda environment:
 Above instruction is for completely new environment; for existing projects on Github:
 * move to parent folder
 * clone project from GitHub (example: `git clone https://github.com/dvesic/perfect-python-4-windows`)
+* move to newly created folder
 * execute `bin\create.cmd` - that will recreate previosly frozen Conda environment
-* activate environment
+* activate environment (`conda activate name_of_env`)
 * execute `bin\auto_cd_folder.cmd`
   * this will create appropriate _set_working_directory.bat_ in conda _envs\name_of_env\etc\conda\activate.d_ folder
   * going forward, each subsequent activation of environment will also move you to appropriate folder as well
