@@ -23,6 +23,7 @@ Some assumptions:
   * (optional) [DBeaver CE](https://www.microsoft.com/store/productId/9PNKDR50694P) - efficient multi-database management/development tool
   * (optional) [Visual Studio Code](https://apps.microsoft.com/store/detail/XP9KHM4BK9FZ7Q) - while PyCharm is for full python development, VS Code is great all-round multi-purpose editor
   * (optional) [PowerToys](https://apps.microsoft.com/store/detail/XP89DCGQ3K6VLD) - excellent FancyZones are great help with wide monitors and better usage of display space
+  * (note: in cmd file mentioned below, there are WinGet installations for those applications, under *REM*, in case you do not want to use MS Store)
 * Rest of mandatory software:
   * [MiniConda](https://docs.conda.io/en/latest/miniconda.html) (installation: `winget install -e --id Anaconda.Miniconda3`)
 * Rest of highly recommended software:

@@ -22,3 +22,10 @@ winget install -e --id WinMerge.WinMerge        --accept-package-agreements
 winget install -e --id Skillbrains.Lightshot    --accept-package-agreements
 winget install -e --id Git.Git                  --accept-package-agreements
 winget install -e --id GitHub.cli               --accept-package-agreements
+
+REM MS Store software, but over winget
+
+REM winget install -e --id Microsoft.VisualStudioCode   --accept-package-agreements
+REM winget install -e --id Microsoft.WindowsTerminal    --accept-package-agreements
+REM winget install -e --id Microsoft.PowerToys          --accept-package-agreements
+REM winget install -e --id dbeaver.dbeaver              --accept-package-agreements
